@@ -5,7 +5,11 @@ This project analyses whether young people in the UK are being priced out of hou
 
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. These files are processed using Python scripts to create clean datasets for analysis.
-- UK housing, rental prices, weekly earnings and CPI datasets
+##### The Data Used:
+- Median earnings data (wages)
+- UK House Price Index
+- Private rental price index
+- Consumer Price Index (CPI)
 
 ### Project Structure
 - data/ → raw datasets
