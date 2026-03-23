@@ -42,3 +42,25 @@ This project analyses whether young people in the UK are being priced out of hou
 
 ## Key Question
 Are housing and rental costs increasing faster than wages in the UK?
+
+# Data Cleaning
+
+### Wages Dataset
+
+The wages dataset (median weekly earnings) was downloaded from the Office for National Statistics (ONS) in Excel format.
+
+Several preprocessing steps were required due to the structure of the raw data:
+
+- Skipped non-data rows at the top of the file
+- Selected only the relevant columns (Year and Median Wage (male and female adult))
+- Rennamed columns for consistency (`Year`, `Wages`)
+- Removed missing values
+- Cleaned the `Year` variable:
+  - Some entries contained suffixes such as "inc" (included) and "exc" (excluded)
+  - Rows containing "exc" were removed
+  - "inc" suffixes were stripped to retain only the numeric year
+- Converted data types (`Year` to integer, `Wages` to float)
+- Sorted the dataset by year
+
+The cleaned dataset is saved in:
+`data/processed/wages_clean.csv`
