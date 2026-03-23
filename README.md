@@ -64,3 +64,28 @@ Several preprocessing steps were required due to the structure of the raw data:
 
 The cleaned dataset is saved in:
 `data/processed/wages_clean.csv`
+
+### House Prices Dataset
+
+House price data was constructed by combining two datasets from the Office for National Statistics (ONS):
+
+- A historical dataset covering earlier years
+- A more recent dataset covering 2011–2025
+
+Several preprocessing steps were required to create a consistent time series:
+
+- Both datasets were cleaned separately:
+  - Selected relevant columns (date and house price values)
+  - Removed missing values
+  - Converted date variables into a standard datetime format
+
+- As both datasets were provided at a monthly frequency, values were aggregated to annual data by taking the mean house price within each year
+
+- The two datasets were then merged into a single dataset:
+  - Duplicate years were removed
+  - Where overlap existed, values from the more recent dataset were retained to ensure consistency with the latest methodology
+
+- The final dataset was sorted by year and saved as:
+  `data/processed/house_prices_yearly.csv`
+
+This results in a continuous annual house price series suitable for comparison with wages and rental data.
