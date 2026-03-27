@@ -89,3 +89,28 @@ Several preprocessing steps were required to create a consistent time series:
   `data/processed/house_prices_yearly.csv`
 
 This results in a continuous annual house price series suitable for comparison with wages and rental data.
+
+### CPI (Consumer Price Index) Dataset
+
+The CPI dataset was obtained from the Office for National Statistics (ONS) and includes multiple inflation measures across different categories.
+
+To make the dataset suitable for analysis, the following preprocessing steps were carried out:
+
+- Loaded the dataset from CSV format and addressed data-type inconsistencies by adjusting import settings
+- Selected a subset of relevant CPI indices:
+  - Headline CPI (All Items)
+  - Food and non-alcoholic beverages
+  - Housing, water, and fuels
+  - Transport
+  - Education
+- Renamed columns to shorter, consistent labels for ease of use (e.g. `CPI_All`, `CPI_Housing`)
+- Converted the `Year` variable into an integer format
+- Converted CPI variables to numeric format, handling any non-numeric values
+- Removed missing observations and sorted the dataset by year
+
+The cleaned dataset was saved as:
+`data/processed/cpi_clean.csv`
+
+These CPI measures are used to:
+- Adjust wages for inflation (real wages)
+- Compare changes in specific cost-of-living components (e.g. housing, food, transport)
