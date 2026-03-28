@@ -114,3 +114,46 @@ The cleaned dataset was saved as:
 These CPI measures are used to:
 - Adjust wages for inflation (real wages)
 - Compare changes in specific cost-of-living components (e.g. housing, food, transport)
+
+## Data Integration and Variable Construction
+
+All cleaned datasets were merged into a two analytical datasets using the `Year` variable as the key.
+
+- Wages, house prices and CPI datasets were merged using an inner join to ensure consistent time periods
+- This resulted in a final dataset containing only overlapping years across all variables (excluding rent prices as data is only from 2015)
+
+  A short dataset was also created to include rent prices in the data using the same method, just starting from 2015.
+ 
+### Constructed Variables
+
+Several new variables were created to support the analysis:
+
+- **Real Wages**: wages adjusted for inflation using CPI
+- **House Price-to-Wage Ratio**: a measure of housing affordability
+- **Rent-to-Wage Ratio**: a measure of rental affordability
+- **Real House Prices**: house prices adjusted for inflation
+
+Additionally, differences between category-specific CPI measures and headline CPI were calculated to capture cost-of-living pressures (e.g. housing inflation relative to overall inflation).
+
+The final dataset was saved as:
+`data/processed/final_dataset.csv`
+
+All steps are fully reproducible via the scripts in `src/`.
+
+### Indexing of Variables
+
+To enable clear comparison of trends over time, key variables were transformed into index form using 1998 as the base year (1998 = 100).
+
+The following variables were indexed:
+- Wages
+- Real wages
+- House prices
+- Real house prices
+- Rent prices
+- Real rent prices
+
+Indexing allows variables measured in different units to be directly compared, highlighting relative growth over time.
+
+Ratio variables (e.g. house price-to-wage ratio) were not indexed, as they are already scale-independent.
+
+All indexed variables are included in the final dataset with the suffix `_Index`.
