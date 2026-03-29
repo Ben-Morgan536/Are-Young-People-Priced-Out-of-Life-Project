@@ -1,10 +1,10 @@
 all: process analyse
 
 process:
-	python src/process.py
+	python3 /mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/src/data_cleaning.py
 
 analyse:
-	python src/analyse.py
+	python3 /mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/src/analysis.py
 
 run:
 	jupyter notebook blog.ipynb
