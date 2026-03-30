@@ -3,13 +3,13 @@ import pandas as pd
 #import os
 #print(os.getcwd())
 # Importing the dataset
-wages_Initial = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\Median_Weekly_Earnings.xlsx", sheet_name="UK Median Time-series")
+wages_Initial = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/Median_Weekly_Earnings.xlsx", sheet_name="UK Median Time-series")
 #Working out the structure of the dataset to make consistent with the other datasets
 print("Raw Wages Data:")
 print(wages_Initial.head())
 print(wages_Initial.columns)
 #Skipping junk rows
-wages = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\Median_Weekly_Earnings.xlsx", sheet_name="UK Median Time-series", skiprows=12, header=None)
+wages = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/Median_Weekly_Earnings.xlsx", sheet_name="UK Median Time-series", skiprows=12, header=None)
 print("Raw Wages Data (After Skipping Junk Rows):")
 print(wages.head())
 print(wages.columns)
@@ -32,20 +32,20 @@ wages = wages.drop_duplicates(subset=['Year'], keep='first')
 print("Final Cleaned Wages Data:")                  
 print(wages.head(20))
 print(wages.info())
-wages.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\wages_clean.csv", index=False)
+wages.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/wages_clean.csv", index=False)
 # Now we have cleaned wages and converted to a CSV file for use in the analysis.
 
 #Now we clean the house price data
 
 #Have 2 datasets that need merging, one pre 2011 and one post 2011, so we need to clean both and then merge them together
 #Cleaning the pre 2011 dataset
-house_hist_initial = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\UKHPI_historic_file.xlsx", sheet_name="Table 1")
+house_hist_initial = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/UKHPI_historic_file.xlsx", sheet_name="Table 1")
 #Working out the structure of the dataset to make consistent with the other datasets
 print("Raw House Price Data (Pre 2011):")
 print(house_hist_initial.head())
 print(house_hist_initial.columns)   
 #Skipping junk rows
-house_hist = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\UKHPI_historic_file.xlsx", sheet_name="Table 1", skiprows=116, header=None)
+house_hist = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/UKHPI_historic_file.xlsx", sheet_name="Table 1", skiprows=116, header=None)
 print("Raw House Price Data (Pre 2011, After Skipping Junk Rows):")
 print(house_hist.head())
 print(house_hist.columns)
@@ -66,13 +66,13 @@ print("Grouped House Price Data (Pre 2011):")
 print(house_hist_yearly.tail())
 
 #Cleaning the post 2011 dataset
-house_recent_initial = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\House_Prices.xlsx", sheet_name="2")
+house_recent_initial = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/House_Prices.xlsx", sheet_name="2")
 #Working out the structure of the dataset to make consistent with the other datasets
 print("Raw House Price Data (Post 2011):")
 print(house_recent_initial.head())
 print(house_recent_initial.columns)
 #Skipping junk rows
-house_recent = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\House_Prices.xlsx", sheet_name="2", skiprows=3, header=None)
+house_recent = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/House_Prices.xlsx", sheet_name="2", skiprows=3, header=None)
 print("Raw House Price Data (Post 2011, After Skipping Junk Rows):")
 print(house_recent.head())
 print(house_recent.columns)
@@ -102,17 +102,17 @@ house_prices_yearly = house_prices_yearly.drop_duplicates(subset=['Year'], keep=
 print("Merged House Price Data (After Removing Duplicates):")
 print(house_prices_yearly['Year'].value_counts()) #check to make sure duplicates have been removed
 #Convert and save the merged dataset to a CSV file for use in the analysis
-house_prices_yearly.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\house_prices_clean.csv", index=False)
+house_prices_yearly.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/house_prices_clean.csv", index=False)
 
 ##Cleaning the rent price data
 
 #working out the structure of the dataset to make consistent with the other datasets. Only readin rows 1-136 to avoid junk rows at the end of the dataset
-rent_initial = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\Rent_Prices.xlsx", sheet_name="Table 1", nrows=136)
+rent_initial = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/Rent_Prices.xlsx", sheet_name="Table 1", nrows=136)
 print("Raw Rent Price Data:")
 print(rent_initial.head())
 print(rent_initial.columns)
 #Skipping junk rows at the start of the dataset and selecting relevant columns
-rent = pd.read_excel(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\Rent_Prices.xlsx", sheet_name="Table 1", skiprows=3, header=None, nrows=133)
+rent = pd.read_excel(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/Rent_Prices.xlsx", sheet_name="Table 1", skiprows=3, header=None, nrows=133)
 print("Raw Rent Price Data (After Skipping Junk Rows):")    
 print(rent.head())
 #Selecting relevant columns and renaming them for consistency
@@ -126,10 +126,10 @@ rent_yearly = rent.groupby('Year')['Rent_Price'].mean().reset_index()
 print("Grouped Rent Price Data:")
 print(rent_yearly.tail())
 #Convert and save the cleaned dataset to a CSV file for use in the analysis
-rent_yearly.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\rent_prices_clean.csv", index=False)
+rent_yearly.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/rent_prices_clean.csv", index=False)
 
 ##Cleand and merge CPI data sets
-cpi_hist_initial = pd.read_csv (r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Raw_Data\CPI_historic_data.csv", usecols=[
+cpi_hist_initial = pd.read_csv (r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Raw_Data/CPI_historic_data.csv", usecols=[
         "Title","CPI INDEX 00: ALL ITEMS 2015=100","CPI INDEX 01 : FOOD AND NON-ALCOHOLIC BEVERAGES 2015=100","CPI INDEX 04 : HOUSING, WATER AND FUELS 2015=100","CPI INDEX 07 : TRANSPORT 2015=100","CPI INDEX 10 : EDUCATION 2015=100"],low_memory=False)
 cpi_condensed2 = cpi_hist_initial[['Title','CPI INDEX 00: ALL ITEMS 2015=100','CPI INDEX 01 : FOOD AND NON-ALCOHOLIC BEVERAGES 2015=100','CPI INDEX 04 : HOUSING, WATER AND FUELS 2015=100','CPI INDEX 07 : TRANSPORT 2015=100','CPI INDEX 10 : EDUCATION 2015=100']]
 cpi_condensed = cpi_condensed2.iloc[204:232]  # Selecting rows 204 to 232
@@ -150,7 +150,7 @@ print(cpi.tail())
 #convert the columns to numeric values and save to a CSV file for use in the analysis
 cols = ['CPI_All', 'CPI_Food', 'CPI_Housing', 'CPI_Transport', 'CPI_Education']
 cpi[cols] = cpi[cols].apply(pd.to_numeric, errors='coerce')
-cpi.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\cpi_clean.csv", index=False)
+cpi.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/cpi_clean.csv", index=False)
 
 ###Merging the cleaned datasets together into one master dataset for use in the analysis###
 
@@ -245,5 +245,5 @@ print("Short Main Dataset with Rent Data:")
 print(main_data_short.head())
 print(main_data_short.shape)
 #Saving the final merged datasets to CSV files for use in the analysis
-main_data.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\main_data.csv", index=False)
-main_data_short.to_csv(r"C:\Users\paul\OneDrive\Ben\Uni\Year_2\Data_Science\Are-Young-People-Priced-Out-of-Life-Project\data\Processed\main_data_short.csv", index=False)
+main_data.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/main_data.csv", index=False)
+main_data_short.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/main_data_short.csv", index=False)
