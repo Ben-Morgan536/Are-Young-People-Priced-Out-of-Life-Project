@@ -157,3 +157,24 @@ Indexing allows variables measured in different units to be directly compared, h
 Ratio variables (e.g. house price-to-wage ratio) were not indexed, as they are already scale-independent.
 
 All indexed variables are included in the final dataset with the suffix `_Index`.
+
+## Workflow Automation
+
+This project uses a Makefile to automate the data processing and analysis pipeline.
+
+This allows the entire project to be reproduced with a single command:
+
+    make
+
+The Makefile executes the following steps:
+
+1. Data cleaning (`src/data_cleaning.py`)
+2. Data analysis (`src/analysis.py`)
+
+Additional commands are available:
+
+- `make process` → runs data cleaning only
+- `make analyse` → runs analysis only
+- `make run` → opens the blog notebook
+
+This approach ensures that all results can be reproduced efficiently and consistently.
