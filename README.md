@@ -178,3 +178,21 @@ Additional commands are available:
 - `make run` → opens the blog notebook
 
 This approach ensures that all results can be reproduced efficiently and consistently.
+
+## Web Scraping: Graduate Labour Market
+
+To better reflect the economic reality faced by young people, this project incorporates web scraping of graduate job listings.
+
+Using Python libraries such as `requests` and `BeautifulSoup`, data was collected on:
+
+- Graduate job titles
+- Estimated salaries
+- Number of available positions
+
+This allows the analysis to move beyond average wages and instead focus on entry-level labour market conditions.
+
+The scraped data is processed and saved in:
+data/processed/graduate_jobs.csv
+
+A summary dataset is created:
+data/processed/graduate_summary.csv
