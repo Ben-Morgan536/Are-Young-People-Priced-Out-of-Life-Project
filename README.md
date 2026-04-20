@@ -3,6 +3,12 @@
 ## Overview
 This project analyses whether young people in the UK are being priced out of housing by comparing wages, rent, and house prices over time.
 
+## How to Reproduce the Analysis
+
+1. Clone the repository:
+git clone <your-repo-link>
+cd your-project
+
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. Raw data files in `data/raw/` are kept unchanged and permissions changed to read-only (using 'chmod'). All cleaning and transformations are performed in Python scripts, with outputs saved to `data/processed/`.
 ##### The Data Used:
