@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+plt.style.use("default")
 #Checking to find the path
 #import os
 #print(os.getcwd())
@@ -155,7 +157,6 @@ cpi.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-Pe
 ###Merging the cleaned datasets together into one master dataset for use in the analysis###
 
 #First we merge the wages and house price datasets together on the Year column using an inner join to keep only the years that are present in both datasets
-
 main_data = pd.merge(wages, house_prices_yearly, on='Year', how='inner')
 print("Merged Wages and House Price Data:")
 print(main_data.head())
@@ -247,3 +248,96 @@ print(main_data_short.shape)
 #Saving the final merged datasets to CSV files for use in the analysis
 main_data.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/main_data.csv", index=False)
 main_data_short.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/data/Processed/main_data_short.csv", index=False)
+
+### Saving Figures in to output folder for use in the report
+
+#Figure 1
+plt.figure(figsize=(10,6))
+
+plt.plot(main_data["Year"], main_data["Real_Wage_Index"], label="Real Wage Index", linewidth=2)
+plt.plot(main_data["Year"], main_data["Real_House_Price_Index"], label="Real House Price Index", linewidth=2)
+
+plt.title("Divergence Between Wages and House Prices in the UK", fontsize=14)
+plt.xlabel("Year")
+plt.ylabel("Real Values (Indexed to 1998=100)")
+
+plt.legend()
+plt.grid(alpha=0.3)
+
+plt.tight_layout()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_1.png")
+plt.close()
+
+#Figure 2
+
+plt.figure(figsize=(10,6))
+
+plt.plot(main_data["Year"], main_data["House_Price_to_Wage_Ratio"], label="House Price to Wage Ratio", linewidth=2)
+
+plt.title("Housing Affordability Has Worsened Over Time", fontsize=14)
+plt.xlabel("Year")
+
+plt.grid(alpha=0.3)
+plt.tight_layout()
+
+
+plt.axhline(y=main_data["House_Price_to_Wage_Ratio"].mean(), linestyle="--", color="red", linewidth=2, label="Average Ratio")
+plt.legend()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_2.png")
+plt.close()
+
+#Figure 3
+
+plt.figure(figsize=(10,6))
+
+plt.plot(main_data["Year"], main_data["Housing_Inflation"], label="Housing", linewidth=2)
+plt.plot(main_data["Year"], main_data["Overall_Inflation"], label="Overall CPI", linewidth=2)
+plt.plot(main_data["Year"], main_data["Education_Inflation"], label="Education", linewidth=1, linestyle=":", color="maroon")
+plt.plot(main_data["Year"], main_data["Transport_Inflation"], label="Transport", linewidth=1, linestyle=":", color="orange")
+
+plt.legend()
+plt.title("Housing Inflation vs Overall Inflation")
+plt.xlabel("Year")
+plt.ylabel("Inflation Rate")
+
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_3.png")
+plt.close()
+
+#Figure 4
+
+plt.figure()
+
+plt.plot(main_data_short["Year"], main_data_short["Rent_Price_to_Wage_Ratio"])
+
+plt.title("Rent to Wage Ratio")
+plt.xlabel("Year")
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_4.png")
+plt.close()
+
+#Figure 5
+
+plt.figure(figsize=(10,6))
+
+plt.plot(main_data["Year"], main_data["Cost_Pressure_Indicator"], linewidth=2, label="Composite Cost Pressure Indicator")
+plt.axhline(y=main_data["Cost_Pressure_Indicator"].mean(), linestyle="--", color="red", linewidth=2, label="Average Pressure")
+
+main_data["Cost_Pressure_Rolling"] = main_data["Cost_Pressure_Indicator"].rolling(window=5).mean()
+plt.plot(main_data["Year"], main_data["Cost_Pressure_Rolling"], label="5-Year Rolling Average", linewidth=2.5)
+
+
+plt.axvspan(2008, 2009, alpha=0.2, label="Recession")
+plt.axvspan(2020, 2020.5, alpha=0.2, label="COVID-19 Pandemic", color="gray")
+
+plt.legend()
+
+plt.title("Rising Cost Pressure on Households")
+plt.xlabel("Year")
+
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_5.png")
+plt.close()
