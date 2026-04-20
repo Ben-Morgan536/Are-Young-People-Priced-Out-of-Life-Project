@@ -196,3 +196,71 @@ data/processed/graduate_jobs.csv
 
 A summary dataset is created:
 data/processed/graduate_summary.csv
+
+## Visual Analysis: Are Young People Priced Out of Life?
+
+This project uses a series of time-series graphs to examine how economic conditions have evolved in the UK, with a particular focus on housing affordability. The visualisations provide the primary evidence base for assessing whether young people are being “priced out of life.”
+
+### 1. Wages vs House Prices
+
+The first set of graphs compares real wages with real house prices over time. While wages show steady but relatively modest growth, house prices increase at a significantly faster rate, particularly after the early 2000s and again following 2020.
+
+This divergence indicates that income growth has not kept pace with the cost of purchasing a home. As a result, individuals relying on wages—particularly young people—face increasing difficulty entering the housing market.
+
+---
+
+### 2. House Price-to-Wage Ratio
+
+The house price-to-wage ratio provides a direct measure of affordability. The graph shows a clear upward trend, meaning that housing is becoming less affordable over time.
+
+Notably:
+- There are brief periods of stabilisation (e.g. post-2008),  
+- But the long-run trend is consistently upward,  
+- With a sharp deterioration in affordability in recent years.
+
+This suggests that the problem is persistent and structural rather than temporary.
+
+---
+
+### 3. Cost Pressure Indicator
+
+A composite cost pressure indicator was constructed using inflation in key categories such as housing, food, transport, and education.
+
+The graph shows:
+- A gradual increase in cost pressures over time,  
+- A pronounced spike around 2021–2023,  
+- Sustained high levels thereafter.
+
+The rolling average highlights that this is not just short-term volatility, but part of a broader upward trend in living costs.
+
+---
+
+### 4. Rent Prices (Short-Run Analysis)
+
+Using data available from 2015 onwards, rent prices were analysed as an additional measure of housing pressure.
+
+The graph shows:
+- Consistent increases in rental costs,  
+- Limited evidence of downward adjustment,  
+- Rising rent-to-wage ratios over time.
+
+This indicates that even those unable to buy are facing increasing financial pressure in the rental market.
+
+---
+
+### 5. Key Insights from the Graphs
+
+Taken together, the visual evidence suggests:
+
+- Housing costs have grown substantially faster than wages,  
+- Affordability has deteriorated steadily over time,  
+- Cost-of-living pressures have intensified, particularly in recent years,  
+- Both buyers and renters are experiencing increasing financial strain.
+
+---
+
+### 6. Conclusion from Visual Evidence
+
+The graphical analysis provides strong evidence that young people are increasingly being priced out of life in the UK.
+
+The issue appears to be driven primarily by the divergence between income growth and housing costs, rather than short-term fluctuations. While inflation contributes to financial pressure, the sustained rise in house prices and rent relative to wages points to deeper structural challenges in the housing market.
