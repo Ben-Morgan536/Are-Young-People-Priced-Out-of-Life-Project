@@ -210,6 +210,9 @@ main_data['CPI_Housing_Index'] = main_data['CPI_Housing'] / main_data.loc[main_d
 main_data['CPI_Transport_Index'] = main_data['CPI_Transport'] / main_data.loc[main_data['Year'] == 1998, 'CPI_Transport'].values[0] * 100
 main_data['CPI_Education_Index'] = main_data['CPI_Education'] / main_data.loc[main_data['Year'] == 1998, 'CPI_Education'].values[0] * 100
 
+#Creating a monthly wage variable by timesing the weekly wage variable by 52 and dividing by 12 to show the average monthly wage
+main_data['Monthly_Wages'] = main_data['Wages'] * 52 / 12
+
 #Rounding all variables to 2 decimal places for easier interpretation
 main_data = main_data.round(2)
 
