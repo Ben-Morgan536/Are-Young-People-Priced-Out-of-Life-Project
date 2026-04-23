@@ -19,6 +19,11 @@ pip install -r requirements.txt
 ```Bash
 make
 ```
+## Advanced Techniques
+
+This project incorporates workflow automation using a Makefile, allowing the full pipeline to be executed with a single command.
+
+Additionally, a structural break analysis was conducted to examine whether the drivers of affordability changed over time.
 
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. Raw data files in `data/raw/` are kept unchanged and permissions changed to read-only (using 'chmod'). All cleaning and transformations are performed in Python scripts, with outputs saved to `data/processed/`.
