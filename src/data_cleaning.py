@@ -189,6 +189,8 @@ main_data['Yearly_Wages'] = main_data['Wages'] * 52
 main_data['House_Price_to_Monthly_Wage_Ratio'] = main_data['House_Price'] / main_data['Monthly_Wages']
 #Creating a house price to yearly wage ratio variable to show how many years of wages it would take to pay the average house price
 main_data['House_Price_to_Yearly_Wage_Ratio'] = main_data['House_Price'] / main_data['Yearly_Wages']
+#Create yearly real wage
+main_data['Yearly_Real_Wages'] = main_data['Real_Wages'] * 52
 
 #Creating cost pressure indicators by calculating the year on year percentage change in the CPI variables to show the inflation rates for each category
 #Housing inflation
