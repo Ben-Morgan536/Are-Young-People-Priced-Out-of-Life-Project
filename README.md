@@ -10,7 +10,7 @@ This project analyses whether young people in the UK are being priced out of hou
 ```bash
 git clone https://github.com/YOUR-USERNAME/uk-housing-affordability-project.git
 cd uk-housing-affordability-project
-
+```
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. Raw data files in `data/raw/` are kept unchanged and permissions changed to read-only (using 'chmod'). All cleaning and transformations are performed in Python scripts, with outputs saved to `data/processed/`.
 ##### The Data Used:
