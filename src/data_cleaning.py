@@ -211,7 +211,6 @@ main_data['CPI_Transport_Index'] = main_data['CPI_Transport'] / main_data.loc[ma
 main_data['CPI_Education_Index'] = main_data['CPI_Education'] / main_data.loc[main_data['Year'] == 1998, 'CPI_Education'].values[0] * 100
 
 #Creating a monthly wage variable by timesing the weekly wage variable by 52 and dividing by 12 to show the average monthly wage
-main_data['Monthly_Wages'] = main_data['Wages'] * 52 / 12
 
 #Rounding all variables to 2 decimal places for easier interpretation
 main_data = main_data.round(2)
@@ -229,6 +228,10 @@ main_data_short['Real_Rent_Price'] = main_data_short['Rent_Price'] / (main_data_
 main_data_short['Rent_Price_to_Wage_Ratio'] = main_data_short['Rent_Price'] / main_data_short['Wages']
 #Creating a rent price to wage ratio variable using real wages and real rent prices to show real
 main_data_short['Real_Rent_Price_to_Real_Wage_Ratio'] = main_data_short['Real_Rent_Price'] / main_data_short['Real_Wages']
+#Creating a monthly wage variable by timesing the weekly wage variable by 52 and dividing by 12 to show the average monthly wage
+main_data_short['Monthly_Wages'] = main_data_short['Wages'] * 52 / 12
+#Creating a rent to monthly wage ratio variable to show how many months of wages it would take to pay the average rent price
+main_data_short['Rent_to_Monthly_Wage_Ratio'] = main_data_short['Rent_Price'] / main_data_short['Monthly_Wages']
 
 #Removing all the CPI index variables as already have base year of 2015 for the short main dataset 
 main_data_short = main_data_short.drop(columns=['CPI_All_Index', 'CPI_Food_Index', 'CPI_Housing_Index', 'CPI_Transport_Index', 'CPI_Education_Index'])
