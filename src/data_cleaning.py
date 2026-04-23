@@ -180,6 +180,10 @@ main_data['Real_House_Price'] = main_data['House_Price'] / (main_data['CPI_All']
 main_data['House_Price_to_Wage_Ratio'] = main_data['House_Price'] / main_data['Wages']
 #Creating a house price to wage ratio variable using real wages and real house prices to show real house affordability
 main_data['Real_House_Price_to_Real_Wage_Ratio'] = main_data['Real_House_Price'] / main_data['Real_Wages']
+#Creating a monthly wage variable by timesing the weekly wage variable by 52 and dividing by 12 to show the average monthly wage
+main_data['Monthly_Wages'] = main_data['Wages'] * 52 / 12
+#Creating a house price to monthly wage ratio variable to show how many months of wages it would take to pay the average house price
+main_data['House_Price_to_Monthly_Wage_Ratio'] = main_data['House_Price'] / main_data['Monthly_Wages']
 
 #Creating cost pressure indicators by calculating the year on year percentage change in the CPI variables to show the inflation rates for each category
 #Housing inflation
