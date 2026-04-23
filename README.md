@@ -275,6 +275,39 @@ Taken together, the visual evidence suggests:
 - Both buyers and renters are experiencing increasing financial strain.
 
 ---
+## Structural Change in Housing Affordability
+
+To examine whether the drivers of housing affordability have changed over time, the dataset was split into two periods: a pre-crisis period and a post-crisis period (around the 2008 financial crisis).
+
+Separate regressions were estimated for each period to assess whether the relationship between housing inflation and affordability remained stable.
+
+### Results
+
+- **Pre-crisis period:**
+  - Constant ≈ 0.103  
+  - Housing Inflation ≈ -0.007  
+
+- **Post-crisis period:**
+  - Constant ≈ 0.002  
+  - Housing Inflation ≈ -0.002  
+
+### Interpretation
+
+The results indicate a substantial decline in the constant term, suggesting that affordability was deteriorating much more rapidly in the earlier period compared to the period after the financial crisis.
+
+The coefficient on housing inflation is negative in both periods but becomes smaller in magnitude in the later period. This suggests that the relationship between housing inflation and affordability has weakened over time.
+
+### Key Insight
+
+These findings provide evidence that the dynamics of housing affordability are not stable over time. Instead, they appear to change across different economic periods.
+
+This supports the idea that the decline in affordability is not driven by a single consistent factor, but reflects broader structural changes in the economy.
+
+### Link to Project Question
+
+This analysis strengthens the overall conclusion that young people are increasingly being priced out of life, as the factors affecting affordability have evolved over time rather than remaining constant.
+
+---
 
 ### 6. Conclusion from Visual Evidence
 
