@@ -341,3 +341,24 @@ plt.grid(alpha=0.3)
 plt.tight_layout()
 plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_5.png")
 plt.close()
+
+#Figure 6
+
+main_data["d_ratio"] = main_data["House_Price_to_Wage_Ratio"].pct_change()
+
+df_reg = main_data.dropna()
+
+import statsmodels.api as sm
+
+X = df_reg[["Housing_Inflation","Overall_Inflation"]]
+y = df_reg["d_ratio"]
+X = sm.add_constant(X)
+model_main = sm.OLS(y, X).fit()
+with open(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_6_regression_results.csv", "w") as f:
+    f.write(model_main.summary().as_text())
+
+# Save clean coefficients table
+results_df = model_main.params.to_frame(name="Coefficient")
+results_df["P-value"] = model_main.pvalues
+results_df["Std_Error"] = model_main.bse
+results_df.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_6_regression_results.csv")
