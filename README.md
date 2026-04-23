@@ -156,6 +156,7 @@ Several new variables were created to support the analysis:
 - **House Price-to-Wage Ratio**: a measure of housing affordability
 - **Rent-to-Wage Ratio**: a measure of rental affordability
 - **Real House Prices**: house prices adjusted for inflation
+- **House price to monthly/yearly wage ration**: a measure of housing affordability using different time frames
 
 Additionally, differences between category-specific CPI measures and headline CPI were calculated to capture cost-of-living pressures (e.g. housing inflation relative to overall inflation).
 
@@ -203,23 +204,6 @@ Additional commands are available:
 
 This approach ensures that all results can be reproduced efficiently and consistently.
 
-## Web Scraping: Graduate Labour Market
-
-To better reflect the economic reality faced by young people, this project incorporates web scraping of graduate job listings.
-
-Using Python libraries such as `requests` and `BeautifulSoup`, data was collected on:
-
-- Graduate job titles
-- Estimated salaries
-- Number of available positions
-
-This allows the analysis to move beyond average wages and instead focus on entry-level labour market conditions.
-
-The scraped data is processed and saved in:
-data/processed/graduate_jobs.csv
-
-A summary dataset is created:
-data/processed/graduate_summary.csv
 
 ## Visual Analysis: Are Young People Priced Out of Life?
 
@@ -245,30 +229,38 @@ Notably:
 This suggests that the problem is persistent and structural rather than temporary.
 
 ---
+### 3. Housing inflation vs overall inflation
+The third graph shows that housing inflation consistently runs above overall CPI inflation, meaning the cost of accommodation has been rising faster than general living costs for most of the period.
 
-### 3. Cost Pressure Indicator
+Key patterns include:
+- Housing inflation remains higher than overall inflation in nearly every year,
+- The gap widens during major economic shocks, especially after 2020,
+- Even when overall inflation stabilises, housing inflation stays elevated, keeping pressure on affordability.
 
-A composite cost pressure indicator was constructed using inflation in key categories such as housing, food, transport, and education.
-
-The graph shows:
-- A gradual increase in cost pressures over time,  
-- A pronounced spike around 2021–2023,  
-- Sustained high levels thereafter.
-
-The rolling average highlights that this is not just short-term volatility, but part of a broader upward trend in living costs.
+This persistent divergence indicates that young people face a higher effective inflation rate than the average household because a larger share of their spending goes toward housing.
 
 ---
+### 4. Movement of rent to wage ratio
+The fourth graph tracks the rent‑to‑wage ratio over the past decade and shows that rent affordability has fluctuated but remains broadly unchanged at a high level, offering only limited relief for young renters.
 
-### 4. Rent Prices (Short-Run Analysis)
+Key patterns include:
+- A sharp rise in the ratio around 2016, indicating a period of worsening affordability,
+- A gradual decline between 2018 and 2022, suggesting temporary improvement,
+- A renewed increase after 2022, showing affordability pressures returning.
 
-Using data available from 2015 onwards, rent prices were analysed as an additional measure of housing pressure.
+Overall, the ratio remains close to its long‑run level, implying that even when conditions improve slightly, young people continue to face persistent strain in meeting rental costs.
 
-The graph shows:
-- Consistent increases in rental costs,  
-- Limited evidence of downward adjustment,  
-- Rising rent-to-wage ratios over time.
+---
+### 5. Rising cost pressure on households
 
-This indicates that even those unable to buy are facing increasing financial pressure in the rental market.
+The fifth graph shows how overall cost pressures have evolved over time, combining multiple inflation components into a single measure that highlights periods of financial strain more clearly than any individual series.
+
+Key patterns include:
+- Noticeable spikes during major economic shocks, particularly the 2008 recession and the post‑2020 period,
+- A clear upward drift in the 5‑year rolling average, indicating that cost pressures have been rising structurally rather than temporarily,
+- Periods of relief (e.g., mid‑2010s) that are short‑lived and quickly reversed by renewed increases.
+
+Taken together, the indicator shows that young people have faced increasingly intense and persistent cost‑of‑living pressures, with recent years marking some of the highest levels in the entire series.
 
 ---
 
@@ -280,6 +272,19 @@ Taken together, the visual evidence suggests:
 - Affordability has deteriorated steadily over time,  
 - Cost-of-living pressures have intensified, particularly in recent years,  
 - Both buyers and renters are experiencing increasing financial strain.
+---
+### 6.Regression: Housing Inflation, Overall Inflation, and Affordability Changes
+
+The sixth figure presents the regression results examining how changes in housing inflation and overall inflation relate to year‑to‑year movements in the rent‑to‑wage ratio.
+
+Key patterns include:
+- Housing inflation has a positive but statistically insignificant effect on affordability changes, suggesting it contributes to pressure but not strongly enough to stand out on its own,
+- Overall inflation shows a negative coefficient that is close to significance, indicating that when general inflation rises, the rent‑to‑wage ratio tends to fall slightly,
+- The model explains only a small share of the variation (R² ≈ 0.18), showing that affordability shifts are driven by broader structural forces rather than short‑term inflation movements.
+
+Overall, the regression reinforces the idea that affordability pressures are persistent and not easily explained by inflation alone, supporting the earlier conclusion that young people face deeper, long‑run structural challenges.
+
+---
 
 ## Output Generation and Storage
 
