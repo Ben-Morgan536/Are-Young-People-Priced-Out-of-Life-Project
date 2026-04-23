@@ -39,7 +39,7 @@ Additionally, a structural break analysis was conducted to examine whether the d
 - output/ → figures and results
 - blog.ipynb → final analysis and write-up
 
-### How to Replicate
+### How to Reproduce the analysis
 
 1. Clone the repository:
    git clone <your repo link>
@@ -292,7 +292,7 @@ All figures and tables in this project are generated programmatically and saved 
 
 ### Figures
 
-All visualisations are saved as `.png` files and the regressions are saved as `.csv`.
+All visualisations are saved as `.png` files and the regressions are saved as `.csv` in /output folder.
 
 ---
 ## Structural Change in Housing Affordability
