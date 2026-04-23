@@ -7,8 +7,9 @@ This project analyses whether young people in the UK are being priced out of hou
 
 1. Clone the repository:
 ```Bash
-git clone <your-repo-link >
-cd your-project
+```bash
+git clone https://github.com/Ben-Morgan536/Are-Young-People-Priced-Out-of-Life-Project.git
+cd Are-Young-People-Priced-Out-of-Life-Project
 ```
 ### 2. Install required packages
 
@@ -20,10 +21,6 @@ pip install -r requirements.txt
 make
 ```
 
-```bash
-git clone https://github.com/Ben-Morgan536/Are-Young-People-Priced-Out-of-Life-Project.git
-cd Are-Young-People-Priced-Out-of-Life-Project
-```
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. Raw data files in `data/raw/` are kept unchanged and permissions changed to read-only (using 'chmod'). All cleaning and transformations are performed in Python scripts, with outputs saved to `data/processed/`.
 ##### The Data Used:
