@@ -5,15 +5,14 @@ This project analyses whether young people in the UK are being priced out of hou
 
 ## How to Reproduce the Analysis
 
-1. Clone the repository:
+### 1. Clone the repository:
 ```Bash
-```bash
 git clone https://github.com/Ben-Morgan536/Are-Young-People-Priced-Out-of-Life-Project.git
 cd Are-Young-People-Priced-Out-of-Life-Project
 ```
 ### 2. Install required packages
 
-```bash
+```Bash
 pip install -r requirements.txt
 ```
 ### 3. Run the full pipeline 
