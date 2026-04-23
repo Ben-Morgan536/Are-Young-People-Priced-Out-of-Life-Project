@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 plt.style.use("default")
 #Checking to find the path
 #import os
@@ -376,3 +377,31 @@ results_df = model_main.params.to_frame(name="Coefficient")
 results_df["P-value"] = model_main.pvalues
 results_df["Std_Error"] = model_main.bse
 results_df.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_6_regression_results.csv")
+
+main_data["d_ratio"] = main_data["House_Price_to_Wage_Ratio"].pct_change()
+# split data (e.g. pre/post 2008)
+df_pre = main_data[main_data["Year"] < 2008]
+df_post = main_data[main_data["Year"] >= 2008]
+X_pre = sm.add_constant(df_pre["Housing_Inflation"])
+y_pre = df_pre["d_ratio"]
+# Combine X and y so we drop rows consistently
+df_pre = pd.concat([y_pre, X_pre], axis=1)
+
+# Remove rows with NaN or inf
+df_pre = df_pre.replace([np.inf, -np.inf], np.nan).dropna()
+
+# Re-split
+y_pre = df_pre.iloc[:, 0]
+X_pre = df_pre.iloc[:, 1:]
+
+
+X_post = sm.add_constant(df_post["Housing_Inflation"])
+y_post = df_post["d_ratio"]
+
+model_pre = sm.OLS(y_pre, X_pre).fit()
+model_post = sm.OLS(y_post, X_post).fit()
+
+print(model_pre.params)
+print(model_post.params)
+with open(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_7_regression_summary.csv", "w") as f:
+    f.write(model_pre.summary().as_text())

@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                d_ratio   R-squared:                       0.324
+Model:                            OLS   Adj. R-squared:                  0.227
+Method:                 Least Squares   F-statistic:                     3.348
+Date:                Thu, 23 Apr 2026   Prob (F-statistic):              0.110
+Time:                        21:07:52   Log-Likelihood:                 20.460
+No. Observations:                   9   AIC:                            -36.92
+Df Residuals:                       7   BIC:                            -36.53
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+=====================================================================================
+                        coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const                 0.1034      0.018      5.861      0.001       0.062       0.145
+Housing_Inflation    -0.0071      0.004     -1.830      0.110      -0.016       0.002
+==============================================================================
+Omnibus:                        3.045   Durbin-Watson:                   2.633
+Prob(Omnibus):                  0.218   Jarque-Bera (JB):                0.964
+Skew:                          -0.798   Prob(JB):                        0.617
+Kurtosis:                       3.148   Cond. No.                         8.77
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
