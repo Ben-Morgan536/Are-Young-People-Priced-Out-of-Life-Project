@@ -274,6 +274,14 @@ Taken together, the visual evidence suggests:
 - Cost-of-living pressures have intensified, particularly in recent years,  
 - Both buyers and renters are experiencing increasing financial strain.
 
+## Output Generation and Storage
+
+All figures and tables in this project are generated programmatically and saved automatically to the `outputs/` directory.
+
+### Figures
+
+All visualisations are saved as `.png` files and the regressions are saved as `.csv`.
+
 ---
 ## Structural Change in Housing Affordability
 
