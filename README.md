@@ -51,6 +51,8 @@ make
 5. Open the blog:
    blog.ipynb
 
+Version control was used throughout the project to track changes and ensure reproducibility.
+
 ### Methods
 - Data cleaning and merging
 - Creation of affordability ratios
