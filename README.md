@@ -360,3 +360,14 @@ This analysis strengthens the overall conclusion that young people are increasin
 The graphical analysis provides strong evidence that young people are increasingly being priced out of life in the UK.
 
 The issue appears to be driven primarily by the divergence between income growth and housing costs, rather than short-term fluctuations. While inflation contributes to financial pressure, the sustained rise in house prices and rent relative to wages points to deeper structural challenges in the housing market.
+
+---
+
+## Use of Unit 5 Techniques
+
+This project applies several techniques from Unit 5 of the course.
+
+- **Regression Analysis:** Used to examine the relationship between inflation and changes in housing affordability.  
+- **Structural Break Analysis:** The dataset was split around the 2008 financial crisis to test whether affordability dynamics changed over time.  
+- **Workflow Automation (Makefile):** The entire data pipeline is automated, allowing the project to be reproduced with a single command.
+
