@@ -20,6 +20,10 @@ pip install -r requirements.txt
 ```Bash
 make
 ```
+```
+To ensure fast installation:
+pip install --prefer-binary -r requirements.txt
+```
 ## Advanced Techniques
 
 #### Workfile Automation
