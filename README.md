@@ -11,7 +11,7 @@ git clone https://github.com/Ben-Morgan536/Are-Young-People-Priced-Out-of-Life-P
 cd Are-Young-People-Priced-Out-of-Life-Project
 ```
 ### 2. Install required packages
-All required packages are listed in `Requirements.txt`.
+All required packages are listed in `requirements.txt`.
 
 ```Bash
 pip install -r requirements.txt
