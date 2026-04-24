@@ -11,6 +11,7 @@ git clone https://github.com/Ben-Morgan536/Are-Young-People-Priced-Out-of-Life-P
 cd Are-Young-People-Priced-Out-of-Life-Project
 ```
 ### 2. Install required packages
+All required packages are listed in `Requirements.txt`.
 
 ```Bash
 pip install -r requirements.txt
@@ -29,6 +30,8 @@ Key commands:
 - `make process` → runs data cleaning  
 - `make analyse` → runs analysis  
 This ensures that all results can be reproduced without manual intervention.
+
+The project is fully reproducible from raw data to final outputs, with no manual steps required.
 
 Additionally, a **structural break analysis** was conducted to examine whether the drivers of affordability changed over time.
 
