@@ -21,9 +21,16 @@ make
 ```
 ## Advanced Techniques
 
-This project incorporates workflow automation using a Makefile, allowing the full pipeline to be executed with a single command.
+#### Workfile Automation
+A Makefile is used to automate the entire workflow.
 
-Additionally, a structural break analysis was conducted to examine whether the drivers of affordability changed over time.
+Key commands:
+- `make` → runs full pipeline  
+- `make process` → runs data cleaning  
+- `make analyse` → runs analysis  
+This ensures that all results can be reproduced without manual intervention.
+
+Additionally, a **structural break analysis** was conducted to examine whether the drivers of affordability changed over time.
 
 ### Data Sources
 - Data is downloaded from the Office for National Statistics (ONS) in Excel format and stored in the `data/raw/` folder. Raw data files in `data/raw/` are kept unchanged and permissions changed to read-only (using 'chmod'). All cleaning and transformations are performed in Python scripts, with outputs saved to `data/processed/`.
