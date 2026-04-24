@@ -223,6 +223,8 @@ This approach ensures that all results can be reproduced efficiently and consist
 
 This project uses a series of time-series graphs to examine how economic conditions have evolved in the UK, with a particular focus on housing affordability. The visualisations provide the primary evidence base for assessing whether young people are being “priced out of life.”
 
+All figures and regression outputs are generated programmatically and saved automatically, ensuring full reproducibility.
+
 ### 1. Wages vs House Prices
 
 The first set of graphs compares real wages with real house prices over time. While wages show steady but relatively modest growth, house prices increase at a significantly faster rate, particularly after the early 2000s and again following 2020.
