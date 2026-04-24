@@ -277,15 +277,18 @@ Key patterns include:
 Taken together, the indicator shows that young people have faced increasingly intense and persistent cost‑of‑living pressures, with recent years marking some of the highest levels in the entire series.
 
 ---
+## What Is Driving the Affordability Crisis?
 
-### 5. Key Insights from the Graphs
+Across the analysis, three consistent patterns emerge:
 
-Taken together, the visual evidence suggests:
+1. **Divergence between wages and housing costs**  
+   Real wages have grown slowly, while house prices and rents have increased significantly faster.
 
-- Housing costs have grown substantially faster than wages,  
-- Affordability has deteriorated steadily over time,  
-- Cost-of-living pressures have intensified, particularly in recent years,  
-- Both buyers and renters are experiencing increasing financial strain.
+2. **Sustained increase in cost pressures**  
+   Inflation in key categories such as housing and food has remained persistently above overall inflation in recent years.
+
+3. **Changing economic dynamics over time**  
+   Structural break and rolling correlation analysis show that the relationship between inflation and affordability is not stable, indicating deeper structural changes.
 ---
 ### 6.Regression: Housing Inflation, Overall Inflation, and Affordability Changes
 
