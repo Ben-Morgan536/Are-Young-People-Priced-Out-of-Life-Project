@@ -380,22 +380,22 @@ results_df["P-value"] = model_main.pvalues
 results_df["Std_Error"] = model_main.bse
 results_df.to_csv(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_6_regression_results.csv")
 
+##Now we want to run separate regressions for the pre and post 2008 periods to see if the relationship between housing inflation and the change in the house price to wage ratio has changed after the financial crisis
+
 main_data["d_ratio"] = main_data["House_Price_to_Wage_Ratio"].pct_change()
-# split data (e.g. pre/post 2008)
+# split data
 df_pre = main_data[main_data["Year"] < 2008]
 df_post = main_data[main_data["Year"] >= 2008]
 X_pre = sm.add_constant(df_pre["Housing_Inflation"])
 y_pre = df_pre["d_ratio"]
-# Combine X and y so we drop rows consistently
+# Combine X and y to drop rows
 df_pre = pd.concat([y_pre, X_pre], axis=1)
 
-# Remove rows with NaN or inf
 df_pre = df_pre.replace([np.inf, -np.inf], np.nan).dropna()
 
-# Re-split
+
 y_pre = df_pre.iloc[:, 0]
 X_pre = df_pre.iloc[:, 1:]
-
 
 X_post = sm.add_constant(df_post["Housing_Inflation"])
 y_post = df_post["d_ratio"]
@@ -407,3 +407,23 @@ print(model_pre.params)
 print(model_post.params)
 with open(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/figure_7_regression_summary.csv", "w") as f:
     f.write(model_pre.summary().as_text())
+
+    main_data["hp_growth"] = main_data["Real_House_Price"].pct_change()
+main_data["wage_growth"] = main_data["Yearly_Real_Wages"].pct_change()
+
+main_data["Counterfactual_Wages"] = main_data["Yearly_Real_Wages"].iloc[0] * (1 + main_data["hp_growth"]).cumprod()
+
+plt.figure(figsize=(10,6))
+
+plt.plot(main_data["Year"], main_data["Yearly_Real_Wages"], label="Actual Yearly Real Wages")
+plt.plot(main_data["Year"], main_data["Counterfactual_Wages"], linestyle="--", label="Counterfactual Wages (if matched house prices)")
+
+plt.title("Actual vs Counterfactual Wages")
+plt.xlabel("Year")
+plt.ylabel("Wages")
+plt.legend()
+
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.savefig(r"/mnt/c/Users/paul/OneDrive/Ben/Uni/Year_2/Data_Science/Are-Young-People-Priced-Out-of-Life-Project/output/Figure_8.png")
+plt.close()
