@@ -8,3 +8,4 @@ seaborn==0.12.2
 requests==2.31.0
 scipy==1.17.1
 notebook==7.*
+jupyterlab==4.*
