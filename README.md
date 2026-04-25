@@ -387,3 +387,5 @@ The final analysis is available as:
 - Notebook: outputs/blog/blog.ipynb  
 - HTML version: outputs/blog/blog.html
 
+The notebook (blog.ipynb) has been tested to run from top to bottom without errors after installation of the required packages.
+
