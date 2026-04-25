@@ -380,3 +380,10 @@ This project applies several techniques from Unit 5 of the course.
 - **Structural Break Analysis:** The dataset was split around the 2008 financial crisis to test whether affordability dynamics changed over time.  
 - **Workflow Automation (Makefile):** The entire data pipeline is automated, allowing the project to be reproduced with a single command.
 
+## Blog Output
+
+The final analysis is available as:
+
+- Notebook: outputs/blog/blog.ipynb  
+- HTML version: outputs/blog/blog.html
+
