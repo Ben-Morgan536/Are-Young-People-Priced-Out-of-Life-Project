@@ -32,7 +32,7 @@ A Makefile is used to automate the entire workflow.
 Key commands:
 - `make` → runs full pipeline  
 - `make process` → runs data cleaning  
-- `make analyse` → runs analysis  
+- `make run` → runs blog  
 This ensures that all results can be reproduced without manual intervention.
 
 The project is fully reproducible from raw data to final outputs, with no manual steps required.
@@ -171,6 +171,7 @@ Several new variables were created to support the analysis:
 - **Rent-to-Wage Ratio**: a measure of rental affordability
 - **Real House Prices**: house prices adjusted for inflation
 - **House price to monthly/yearly wage ration**: a measure of housing affordability using different time frames
+- **Cost Pressure indicator**: Uses an average of housing, transport, food and education inflation
 
 Additionally, differences between category-specific CPI measures and headline CPI were calculated to capture cost-of-living pressures (e.g. housing inflation relative to overall inflation).
 
@@ -208,12 +209,11 @@ This allows the entire project to be reproduced with a single command:
 The Makefile executes the following steps:
 
 1. Data cleaning (`src/data_cleaning.py`)
-2. Data analysis (`src/analysis.py`)
+2. Running the blog (`blog.ipynb`)
 
 Additional commands are available:
 
 - `make process` → runs data cleaning only
-- `make analyse` → runs analysis only
 - `make run` → opens the blog notebook
 
 This approach ensures that all results can be reproduced efficiently and consistently.
@@ -235,7 +235,7 @@ This divergence indicates that income growth has not kept pace with the cost of 
 
 ### 2. House Price-to-Wage Ratio
 
-The house price-to-wage ratio provides a direct measure of affordability. The graph shows a clear upward trend, meaning that housing is becoming less affordable over time.
+The house price-to-wage ratio provides a direct measure of affordability. The graph shows a clear upward trend, meaning that housing is becoming less affordable over time. This is seen by the implementation of a trend line.
 
 Notably:
 - There are brief periods of stabilisation (e.g. post-2008),  
@@ -269,7 +269,7 @@ Overall, the ratio remains close to its long‑run level, implying that even whe
 ---
 ### 5. Rising cost pressure on households
 
-The fifth graph shows how overall cost pressures have evolved over time, combining multiple inflation components into a single measure that highlights periods of financial strain more clearly than any individual series.
+The fifth graph shows how overall cost pressures have evolved over time, combining multiple inflation components into a single measure that highlights periods of financial strain more clearly than any individual series. This is aided by the use of computing a five-year rolling average line smoothing out fluctuations and exaggerating the general direction.
 
 Key patterns include:
 - Noticeable spikes during major economic shocks, particularly the 2008 recession and the post‑2020 period,
@@ -290,7 +290,7 @@ Across the analysis, three consistent patterns emerge:
    Inflation in key categories such as housing and food has remained persistently above overall inflation in recent years.
 
 3. **Changing economic dynamics over time**  
-   Structural break and rolling correlation analysis show that the relationship between inflation and affordability is not stable, indicating deeper structural changes.
+   Structural break and rolling correlation analysis show that the relationship between inflation and affordability is not stable, indicating deeper structural      changes.
 ---
 ### 6.Regression: Housing Inflation, Overall Inflation, and Affordability Changes
 
@@ -311,7 +311,7 @@ All figures and tables in this project are generated programmatically and saved 
 
 ### Figures
 
-All visualisations are saved as `.png` files and the regressions are saved as `.csv` in /output folder.
+All visualisations are saved as `.png` files and the regressions are saved as `.csv` in `/output` folder.
 
 ---
 ## Structural Change in Housing Affordability
